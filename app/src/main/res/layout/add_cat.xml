@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Titulo -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear un nuevo Gato"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/negroRosa"/>
+
+    <!-- Nombre -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/negroRosa">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Selector Masculino / Femenino -->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"
+        app:layout_constraintTop_toBottomOf="@id/layoutNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMasculino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/rosita"
+            android:textColor="@color/negroRosa"
+            android:text="Masculino"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFemenino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Femenino"
+            app:backgroundTint="@color/rosita"
+            android:textColor="@color/negroRosa"/>
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!-- Checkbox -->
+    <CheckBox
+        android:id="@+id/checkEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiene más de 12 meses?"
+        app:layout_constraintTop_toBottomOf="@id/toggleGenero"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Edad -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEdad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Edad"
+        app:layout_constraintTop_toBottomOf="@id/checkEdad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEdad"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Raza -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutRaza"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Raza"
+        app:layout_constraintTop_toBottomOf="@id/layoutEdad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRaza"
+            android:layout_width="365dp"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Peso -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutPeso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Peso"
+        app:layout_constraintTop_toBottomOf="@id/layoutRaza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/negroRosa">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPeso"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Boton Save -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        app:backgroundTint="@color/rosaOscuro"
+        android:textColor="@android:color/white"/>
+
+    <!-- Boton Cancel -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSave"
+        android:layout_marginStart="10dp"
+        app:backgroundTint="@color/blanco"
+        android:textColor="@color/negroRosa"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
