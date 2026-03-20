@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="@color/blanco">
 
     <!-- CONTENIDO PRINCIPAL -->
     <LinearLayout
@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#8C4A52"
+            android:background="@color/rosaOscuro"
             android:gravity="center_vertical"
             android:padding="16dp">
 
@@ -23,13 +23,13 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_sort_by_size"
-                app:tint="@android:color/white"/>
+                app:tint="@color/blanco"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="¿Qué hizo tu gato hoy?"
-                android:textColor="@android:color/white"
+                android:textColor="@color/blanco"
                 android:textSize="18sp"
                 android:layout_marginStart="12dp"/>
 
@@ -42,7 +42,7 @@
             android:layout_margin="16dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="4dp"
-            app:cardBackgroundColor="#E8A0AA">
+            app:cardBackgroundColor="@color/rosita">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="August 2025"
-                    android:textColor="#555" />
+                    android:textColor="@color/negroRosa" />
 
                 <!-- GRID DE DÍAS -->
                 <GridLayout
@@ -177,7 +177,7 @@
                         style="@style/dayStyle"
                         android:background="@drawable/circle_day"
                         android:text="17"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@color/blanco" />
                     <!-- Los días agregados a forma de linea -->
                     <TextView
                         style="@style/dayStyle"
@@ -273,7 +273,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@android:color/white"
+            android:background="@color/blanco"
             android:elevation="3dp"
             android:orientation="horizontal"
             android:padding="10dp">
