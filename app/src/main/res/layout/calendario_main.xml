@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#8C4A52"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                app:tint="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Qué hizo tu gato hoy?"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginStart="12dp"/>
+
+        </LinearLayout>
+
+        <!-- CALENDARIO -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#E8A0AA">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="393dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select date"
+                    android:textColor="#444" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Mon, Aug 17"
+                    android:textColor="#333"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="August 2025"
+                    android:textColor="#555" />
+
+                <!-- GRID DE DÍAS -->
+                <GridLayout
+                    android:layout_width="310dp"
+                    android:layout_height="267dp"
+                    android:layout_marginTop="12dp"
+                    android:columnCount="7">
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="S" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="M" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="T" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="W" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="T" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="F" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="S" />
+
+                    <!-- NUM DE DÍAS -->
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="1" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="2" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="3" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="4" />
+
+                    <!-- Día seleccionado para ejemplo-->
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="5" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="6" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="7" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="8" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="9" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="10" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="11" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="12" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="13" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="14" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="15" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="16" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:background="@drawable/circle_day"
+                        android:text="17"
+                        android:textColor="@android:color/white" />
+                    <!-- Los días agregados a forma de linea -->
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="18" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="19" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="20" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="21" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="22" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="23" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="24" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="25" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="26" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="27" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="28" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="29" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="30" />
+
+                    <TextView
+                        style="@style/dayStyle"
+                        android:text="31" />
+
+                </GridLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <!-- PANEL DE TIPS (SIN SLIDE) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="267dp"
+        android:layout_gravity="bottom"
+        android:background="#A8C1B0"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Barrita -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center"
+            android:background="#888" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mis tips del día"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Card tip -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:elevation="3dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_gallery" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diabetes en Gatos"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Si tu gato presenta alguno de..."
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
