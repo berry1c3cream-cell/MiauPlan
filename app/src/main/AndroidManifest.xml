@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiauPlan1Ver">
         <activity
+            android:name=".EventoDiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarioMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".CrearGatoActivity"
             android:exported="false" />
         <activity

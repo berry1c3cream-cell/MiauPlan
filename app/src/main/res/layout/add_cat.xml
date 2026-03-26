@@ -134,27 +134,31 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Boton Save -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"
-        app:backgroundTint="@color/rosaOscuro"
-        android:textColor="@android:color/white"/>
 
     <!-- Boton Cancel -->
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="36dp"
         android:text="Cancel"
+        android:textColor="@color/negroRosa"
+        app:backgroundTint="@color/rosita"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnSave"
-        android:layout_marginStart="10dp"
-        app:backgroundTint="@color/blanco"
-        android:textColor="@color/negroRosa"/>
+        app:layout_constraintStart_toEndOf="@id/btnSave" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="36dp"
+        android:text="Save"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/rosaOscuro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

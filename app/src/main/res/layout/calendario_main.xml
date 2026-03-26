@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,9 +21,10 @@
             android:padding="16dp">
 
             <ImageView
+                android:id="@+id/btnBack"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:src="@android:drawable/ic_media_previous"
                 app:tint="@color/blanco"/>
 
             <TextView
@@ -109,131 +111,221 @@
 
                     <!-- NUM DE DÍAS -->
                     <TextView
+                        android:id="@+id/day1"
                         style="@style/dayStyle"
-                        android:text="1" />
+                        android:text="1"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day2"
                         style="@style/dayStyle"
-                        android:text="2" />
+                        android:text="2"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day3"
                         style="@style/dayStyle"
-                        android:text="3" />
+                        android:text="3"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day4"
                         style="@style/dayStyle"
-                        android:text="4" />
-
-                    <!-- Día seleccionado para ejemplo-->
-                    <TextView
-                        style="@style/dayStyle"
-                        android:text="5" />
+                        android:text="4"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day5"
                         style="@style/dayStyle"
-                        android:text="6" />
+                        android:text="5"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day6"
                         style="@style/dayStyle"
-                        android:text="7" />
+                        android:text="6"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day7"
                         style="@style/dayStyle"
-                        android:text="8" />
+                        android:text="7"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day8"
                         style="@style/dayStyle"
-                        android:text="9" />
+                        android:text="8"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day9"
                         style="@style/dayStyle"
-                        android:text="10" />
+                        android:text="9"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day10"
                         style="@style/dayStyle"
-                        android:text="11" />
+                        android:text="10"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day11"
                         style="@style/dayStyle"
-                        android:text="12" />
+                        android:text="11"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day12"
                         style="@style/dayStyle"
-                        android:text="13" />
+                        android:text="12"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day13"
+                        style="@style/dayStyle"
+                        android:text="13"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                    <TextView
+                        android:id="@+id/day14"
                         style="@style/dayStyle"
                         android:text="14" />
 
                     <TextView
+                        android:id="@+id/day15"
                         style="@style/dayStyle"
-                        android:text="15" />
+                        android:text="15"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day16"
                         style="@style/dayStyle"
-                        android:text="16" />
+                        android:text="16"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day17"
                         style="@style/dayStyle"
                         android:background="@drawable/circle_day"
                         android:text="17"
-                        android:textColor="@color/blanco" />
-                    <!-- Los días agregados a forma de linea -->
-                    <TextView
-                        style="@style/dayStyle"
-                        android:text="18" />
+                        android:textColor="@color/blanco"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day18"
                         style="@style/dayStyle"
-                        android:text="19" />
+                        android:text="18"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day19"
                         style="@style/dayStyle"
-                        android:text="20" />
+                        android:text="19"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day20"
                         style="@style/dayStyle"
-                        android:text="21" />
+                        android:text="20"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day21"
                         style="@style/dayStyle"
-                        android:text="22" />
+                        android:text="21"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day22"
                         style="@style/dayStyle"
-                        android:text="23" />
+                        android:text="22"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day23"
                         style="@style/dayStyle"
-                        android:text="24" />
+                        android:text="23"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day24"
                         style="@style/dayStyle"
-                        android:text="25" />
+                        android:text="24"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day25"
                         style="@style/dayStyle"
-                        android:text="26" />
+                        android:text="25"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day26"
                         style="@style/dayStyle"
-                        android:text="27" />
+                        android:text="26"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day27"
                         style="@style/dayStyle"
-                        android:text="28" />
+                        android:text="27"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day28"
                         style="@style/dayStyle"
-                        android:text="29" />
+                        android:text="28"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day29"
                         style="@style/dayStyle"
-                        android:text="30" />
+                        android:text="29"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <TextView
+                        android:id="@+id/day30"
                         style="@style/dayStyle"
-                        android:text="31" />
+                        android:text="30"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                    <TextView
+                        android:id="@+id/day31"
+                        style="@style/dayStyle"
+                        android:text="31"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                 </GridLayout>
 
@@ -246,7 +338,7 @@
     <!-- PANEL DE TIPS (SIN SLIDE) -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="267dp"
+        android:layout_height="228dp"
         android:layout_gravity="bottom"
         android:background="#A8C1B0"
         android:orientation="vertical"
