@@ -22,7 +22,7 @@
     <!-- Nombre -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutNombre"
-        android:layout_width="0dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:hint="Nombre"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -79,7 +79,7 @@
     <!-- Edad -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutEdad"
-        android:layout_width="0dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:hint="Edad"
         app:layout_constraintTop_toBottomOf="@id/checkEdad"
@@ -98,7 +98,7 @@
     <!-- Raza -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutRaza"
-        android:layout_width="0dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:hint="Raza"
         app:layout_constraintTop_toBottomOf="@id/layoutEdad"
@@ -116,7 +116,7 @@
     <!-- Peso -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutPeso"
-        android:layout_width="0dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:hint="Peso"
         app:layout_constraintTop_toBottomOf="@id/layoutRaza"
