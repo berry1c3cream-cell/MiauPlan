@@ -34,11 +34,26 @@ class CalendarioMainActivity : AppCompatActivity() {
         }
 
         val btnBack = findViewById<ImageView>(R.id.btnBack)
+        val nombre = intent.getStringExtra("NOMBRE_GATO") ?: "tu gato"
+
+        val tvTitulo = findViewById<TextView>(R.id.tvTitulo)
+        tvTitulo.text = "¿Qué hizo $nombre hoy?"
 
         btnBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        for (i in 1..31) {
+            val resID = resources.getIdentifier("day$i", "id", packageName)
+            val dayView = findViewById<TextView>(resID)
+
+            dayView?.setBackgroundResource(0)
+        }
     }
 }

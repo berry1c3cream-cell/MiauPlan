@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 
 class CrearGatoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,11 +21,22 @@ class CrearGatoActivity : AppCompatActivity() {
 
         val btnSave = findViewById<com.google.android.material.button.MaterialButton>(R.id.btnSave)
         val btnCancel = findViewById<com.google.android.material.button.MaterialButton>(R.id.btnCancel)
+        val etNombre = findViewById<TextInputEditText>(R.id.etNombre)
 
         // SAVE → nueva pantalla
         btnSave.setOnClickListener {
+            val nombre = etNombre.text.toString()
+
             val intent = Intent(this, CalendarioMainActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("NOMBRE_GATO", nombre)
+
+            if (nombre.isNotEmpty()) {
+                val intent = Intent(this, CalendarioMainActivity::class.java)
+                intent.putExtra("NOMBRE_GATO", nombre)
+                startActivity(intent)
+            } else {
+                etNombre.error = "Ponle nombre al michi!!"
+            }
         }
 
         // CANCEL → regresar a la pantalla anterior

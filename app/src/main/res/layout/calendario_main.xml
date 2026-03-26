@@ -28,6 +28,7 @@
                 app:tint="@color/blanco"/>
 
             <TextView
+                android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="¿Qué hizo tu gato hoy?"
@@ -47,7 +48,7 @@
             app:cardBackgroundColor="@color/rosita">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="393dp"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -220,12 +221,11 @@
                         android:clickable="true"
                         android:focusable="true"/>
 
+                    <!-- android:background="@drawable/circle_day" -->
                     <TextView
                         android:id="@+id/day17"
                         style="@style/dayStyle"
-                        android:background="@drawable/circle_day"
                         android:text="17"
-                        android:textColor="@color/blanco"
                         android:clickable="true"
                         android:focusable="true"/>
 
@@ -337,12 +337,15 @@
 
     <!-- PANEL DE TIPS (SIN SLIDE) -->
     <LinearLayout
+        android:id="@+id/bottomSheet"
         android:layout_width="match_parent"
-        android:layout_height="228dp"
+        android:layout_height="300dp"
         android:layout_gravity="bottom"
         android:background="#A8C1B0"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:behavior_peekHeight="80dp">
 
         <!-- Barrita -->
         <View
@@ -352,13 +355,11 @@
             android:background="#888" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="Mis tips del día"
-            android:textColor="#333"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <!-- Card tip -->
         <LinearLayout
@@ -383,7 +384,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Diabetes en Gatos"
                     android:textStyle="bold" />
