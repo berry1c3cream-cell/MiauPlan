@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F2EEEE"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
     <!-- HEADER -->
     <LinearLayout
@@ -20,7 +21,8 @@
             android:layout_weight="1"
             android:text="Mon, Aug 17"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"/>
 
         <TextView
             android:text="X"
@@ -114,14 +116,16 @@
         android:text="Notas"
         android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_marginStart="9dp"/>
 
     <TextView
         android:text="Agrega notas del día"
         android:textSize="12sp"
         android:layout_marginBottom="8dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_marginStart="9dp"/>
 
     <LinearLayout
         android:layout_width="390dp"
@@ -161,7 +165,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="#D98F9A"
         android:gravity="center"
         android:orientation="vertical"
@@ -174,6 +179,11 @@
             android:layout_width="wrap_content"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <!-- BOTONES -->
     <LinearLayout
