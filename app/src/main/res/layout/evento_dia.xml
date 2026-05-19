@@ -19,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Mon, Aug 17"
+            android:id="@+id/tvDia"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="12dp"/>
@@ -33,6 +33,7 @@
 
     <!-- VACUNAS -->
     <LinearLayout
+        android:id="@+id/layoutVacuna"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D9D4D4"
@@ -54,22 +55,19 @@
                 android:layout_width="wrap_content"/>
 
             <TextView
+                android:id="@+id/tvVacunaEstado"
                 android:text="¿Tu gato ha recibido una vacuna hoy?"
                 android:textSize="12sp"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
         </LinearLayout>
 
-        <TextView
-            android:text="›"
-            android:textSize="18sp"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
 
     </LinearLayout>
 
     <!-- VETERINARIO -->
     <LinearLayout
+        android:id="@+id/layoutVet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
@@ -90,17 +88,12 @@
                 android:layout_width="wrap_content"/>
 
             <TextView
+                android:id="@+id/tvVetEstado"
                 android:text="¿Has llevado a tu gato a un chequeo hoy?"
                 android:textSize="12sp"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
         </LinearLayout>
-
-        <TextView
-            android:text="›"
-            android:textSize="18sp"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
 
     </LinearLayout>
 
@@ -133,6 +126,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/etNotas"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -173,6 +167,7 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/tvNotasGuardadas"
             android:text="No hay nada aún"
             android:textColor="#333"
             android:layout_height="wrap_content"

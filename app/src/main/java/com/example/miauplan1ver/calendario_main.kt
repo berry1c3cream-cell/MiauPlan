@@ -10,22 +10,30 @@ import android.content.Intent
 import android.widget.ImageView
 
 class CalendarioMainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.calendario_main)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
+        val prefs = getSharedPreferences("GatosDB", MODE_PRIVATE)
+        val nombre = prefs.getString("nombre", "tu gato")
+
+        val tvTitulo = findViewById<TextView>(R.id.tvTitulo)
+        tvTitulo.text = "¿Qué hizo $nombre hoy?"
+
         for (i in 1..31) {
+
             val resID = resources.getIdentifier("day$i", "id", packageName)
             val dayView = findViewById<TextView>(resID)
 
             dayView?.setOnClickListener {
-                dayView.setBackgroundResource(R.drawable.circle_day)
 
                 val intent = Intent(this, EventoDiaActivity::class.java)
                 intent.putExtra("DIA", i)
@@ -34,26 +42,29 @@ class CalendarioMainActivity : AppCompatActivity() {
         }
 
         val btnBack = findViewById<ImageView>(R.id.btnBack)
-        val nombre = intent.getStringExtra("NOMBRE_GATO") ?: "tu gato"
-
-        val tvTitulo = findViewById<TextView>(R.id.tvTitulo)
-        tvTitulo.text = "¿Qué hizo $nombre hoy?"
 
         btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
-
     }
 
     override fun onResume() {
         super.onResume()
 
+        val prefs = getSharedPreferences("EventosDB", MODE_PRIVATE)
+
         for (i in 1..31) {
+
             val resID = resources.getIdentifier("day$i", "id", packageName)
             val dayView = findViewById<TextView>(resID)
 
-            dayView?.setBackgroundResource(0)
+            val evento = prefs.getString("evento_$i", "")
+
+            if (!evento.isNullOrEmpty()) {
+                dayView?.setBackgroundResource(R.drawable.circle_day)
+            } else {
+                dayView?.setBackgroundResource(0)
+            }
         }
     }
 }
