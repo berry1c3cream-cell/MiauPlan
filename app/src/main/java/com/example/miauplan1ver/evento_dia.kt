@@ -1,5 +1,6 @@
 package com.example.miauplan1ver
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -68,32 +69,21 @@ class EventoDiaActivity : AppCompatActivity() {
 
         layoutVacuna.setOnClickListener {
 
-            val nuevoEstado = !prefs.getBoolean(claveVacuna, false)
+            val intent = Intent(this, vacunas::class.java)
 
-            prefs.edit()
-                .putBoolean(claveVacuna, nuevoEstado)
-                .apply()
+            intent.putExtra("DIA", dia)
 
-            if (nuevoEstado) {
-                tvVacunaEstado.text = "✅ Vacuna aplicada"
-            } else {
-                tvVacunaEstado.text = "¿Tu gato ha recibido una vacuna hoy?"
-            }
+            startActivity(intent)
         }
 
         layoutVet.setOnClickListener {
 
-            val nuevoEstado = !prefs.getBoolean(claveVet, false)
+            val intent = Intent(this, activity_visitaVeterinario::class.java)
 
-            prefs.edit()
-                .putBoolean(claveVet, nuevoEstado)
-                .apply()
+            intent.putExtra("DIA", dia)
 
-            if (nuevoEstado) {
-                tvVetEstado.text = "✅ Visitó veterinario"
-            } else {
-                tvVetEstado.text = "¿Has llevado a tu gato a un chequeo hoy?"
-            }
+            startActivity(intent)
+
         }
 
         // GUARDAR EVENTO

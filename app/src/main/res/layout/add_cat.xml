@@ -70,24 +70,13 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <!-- Checkbox -->
-    <CheckBox
-        android:id="@+id/checkEdad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tiene más de 12 meses?"
-        app:layout_constraintTop_toBottomOf="@id/toggleGenero"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="100dp"/>
-
     <!-- Edad -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutEdad"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:hint="Edad"
-        app:layout_constraintTop_toBottomOf="@id/checkEdad"
+        app:layout_constraintTop_toBottomOf="@id/toggleGenero"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp">

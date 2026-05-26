@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiauPlan1Ver">
         <activity
+            android:name=".activity_visitaVeterinario"
+            android:exported="false" />
+        <activity
+            android:name=".vacunas"
+            android:exported="false" />
+        <activity
             android:name=".EventoDiaActivity"
             android:exported="false" />
         <activity
