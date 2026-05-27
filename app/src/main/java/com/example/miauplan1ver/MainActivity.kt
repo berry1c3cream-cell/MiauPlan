@@ -12,6 +12,9 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,16 +29,66 @@ class MainActivity : AppCompatActivity() {
 
         val boton = findViewById<FloatingActionButton>(R.id.addCat)
         val btnDelete = findViewById<MaterialButton>(R.id.btnDelete)
+        val catImage = findViewById<ImageView>(R.id.catImage)
+
+        val breathe = ObjectAnimator.ofFloat(catImage, "scaleX", 1f, 1.04f).apply {
+            duration = 1800
+            repeatCount = ValueAnimator.INFINITE
+            repeatMode = ValueAnimator.REVERSE
+        }
+
+        val breatheY = ObjectAnimator.ofFloat(catImage, "scaleY", 1f, 1.04f).apply {
+            duration = 1800
+            repeatCount = ValueAnimator.INFINITE
+            repeatMode = ValueAnimator.REVERSE
+        }
+
+        catImage.animate()
+            .translationYBy(-10f)
+            .setDuration(1000)
+            .withEndAction {
+                catImage.animate()
+                    .translationYBy(10f)
+                    .setDuration(1000)
+                    .start()
+            }
+            .start()
+
+        breathe.start()
+        breatheY.start()
 
         btnDelete.setOnClickListener {
+
+            btnDelete.animate()
+                .rotation(3f)
+                .setDuration(50)
+                .withEndAction {
+                    btnDelete.animate()
+                        .rotation(-3f)
+                        .setDuration(50)
+                        .withEndAction {
+                            btnDelete.animate()
+                                .rotation(0f)
+                                .setDuration(50)
+                                .start()
+                        }
+                        .start()
+                }
+                .start()
 
             // BORRAR GATO
             val gatoPrefs = getSharedPreferences("GatosDB", MODE_PRIVATE)
             gatoPrefs.edit().clear().apply()
 
             // BORRAR EVENTOS
-            val eventosPrefs = getSharedPreferences("EventosDB", MODE_PRIVATE)
-            eventosPrefs.edit().clear().apply()
+            val eventosPrefs1 = getSharedPreferences("EventosDB", MODE_PRIVATE)
+            eventosPrefs1.edit().clear().apply()
+
+            val eventosPrefs2 = getSharedPreferences("VetDB", MODE_PRIVATE)
+            eventosPrefs2.edit().clear().apply()
+
+            val eventosPrefs3 = getSharedPreferences("VacunasDB", MODE_PRIVATE)
+            eventosPrefs3.edit().clear().apply()
 
             Toast.makeText(this, "Gato eliminado 🐱💨", Toast.LENGTH_SHORT).show()
 
@@ -46,9 +99,39 @@ class MainActivity : AppCompatActivity() {
         boton.setOnClickListener {
             val intent = Intent(this, CrearGatoActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(
+                android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right
+            )
         }
 
         val catCard = findViewById<CardView>(R.id.cardGato)
+
+        catCard.setOnTouchListener { v, event ->
+
+            when (event.action) {
+
+                android.view.MotionEvent.ACTION_DOWN -> {
+                    v.animate()
+                        .scaleX(0.96f)
+                        .scaleY(0.96f)
+                        .setDuration(120)
+                        .start()
+                }
+
+                android.view.MotionEvent.ACTION_UP,
+                android.view.MotionEvent.ACTION_CANCEL -> {
+
+                    v.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(120)
+                        .start()
+                }
+            }
+
+            false
+        }
 
         catCard.setOnClickListener {
 
@@ -66,11 +149,24 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
     }
 
     override fun onResume() {
         super.onResume()
+
+        val boton = findViewById<FloatingActionButton>(R.id.addCat)
+
+        boton.translationY = 100f
+        boton.alpha = 0f
+
         cargarDatos()
+
+        boton.animate()
+            .translationY(0f)
+            .alpha(1f)
+            .setDuration(500)
+            .start()
     }
 
     fun cargarDatos() {
@@ -85,6 +181,7 @@ class MainActivity : AppCompatActivity() {
         val catDetalles = findViewById<TextView>(R.id.catDetalles)
         val boton = findViewById<FloatingActionButton>(R.id.addCat)
         val btnDelete = findViewById<MaterialButton>(R.id.btnDelete)
+        val cardGato = findViewById<CardView>(R.id.cardGato)
 
         val generoTexto = when (genero) {
             "M" -> "Masculino"
@@ -113,5 +210,12 @@ class MainActivity : AppCompatActivity() {
             boton.show()
             btnDelete.visibility = View.GONE
         }
+
+        cardGato.alpha = 0f
+
+        cardGato.animate()
+            .alpha(1f)
+            .setDuration(400)
+            .start()
     }
 }

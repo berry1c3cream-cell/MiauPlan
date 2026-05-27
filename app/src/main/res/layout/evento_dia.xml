@@ -34,9 +34,9 @@
     <!-- VACUNAS -->
     <LinearLayout
         android:id="@+id/layoutVacuna"
+        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D9D4D4"
         android:padding="12dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
@@ -68,6 +68,7 @@
     <!-- VETERINARIO -->
     <LinearLayout
         android:id="@+id/layoutVet"
+        android:alpha="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
@@ -134,13 +135,13 @@
             android:background="@drawable/edit_border"
             android:padding="10dp"/>
 
-        <TextView
+        <!--<TextView
             android:text="+"
             android:textSize="24sp"
             android:layout_marginStart="6dp"
             android:gravity="center"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:layout_width="wrap_content"/> -->
     </LinearLayout>
 
     <!-- DIVIDER -->
