@@ -41,6 +41,15 @@ class EventoDiaActivity : AppCompatActivity() {
 
         tvDia.text = "Día $dia"
 
+        tvDia.translationX = -100f
+        tvDia.alpha = 0f
+
+        tvDia.animate()
+            .translationX(0f)
+            .alpha(1f)
+            .setDuration(500)
+            .start()
+
         val clave = "evento_$dia"
         val claveVacuna = "vacuna_$dia"
         val claveVet = "vet_$dia"
@@ -60,29 +69,147 @@ class EventoDiaActivity : AppCompatActivity() {
         val vetActivo = prefs.getBoolean(claveVet, false)
 
         if (vacunaActiva) {
+
             tvVacunaEstado.text = "✅ Vacuna aplicada"
+
+            layoutVacuna.animate()
+                .scaleX(1.03f)
+                .scaleY(1.03f)
+                .setDuration(150)
+                .withEndAction {
+
+                    layoutVacuna.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(150)
+                        .start()
+                }
+                .start()
         }
 
         if (vetActivo) {
-            tvVetEstado.text = "✅ Visitó veterinario"
+
+            tvVacunaEstado.text = "✅ Visitó veterinario"
+
+            layoutVacuna.animate()
+                .scaleX(1.03f)
+                .scaleY(1.03f)
+                .setDuration(150)
+                .withEndAction {
+
+                    layoutVacuna.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(150)
+                        .start()
+                }
+                .start()
+        }
+
+        layoutVacuna.animate()
+            .alpha(1f)
+            .setDuration(500)
+
+        layoutVacuna.setOnTouchListener { v, event ->
+
+            when (event.action) {
+
+                android.view.MotionEvent.ACTION_DOWN -> {
+                    v.animate()
+                        .alpha(0.85f)
+                        .setDuration(80)
+                        .start()
+                }
+
+                android.view.MotionEvent.ACTION_UP,
+                android.view.MotionEvent.ACTION_CANCEL -> {
+                    v.animate()
+                        .alpha(1f)
+                        .setDuration(80)
+                        .start()
+                }
+            }
+
+            false
         }
 
         layoutVacuna.setOnClickListener {
 
-            val intent = Intent(this, vacunas::class.java)
+            it.animate()
+                .scaleX(0.92f)
+                .scaleY(0.92f)
+                .setDuration(80)
+                .withEndAction {
 
-            intent.putExtra("DIA", dia)
+                    it.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .duration = 80
 
-            startActivity(intent)
+                    val intent = Intent(this, vacunas::class.java)
+
+                    intent.putExtra("DIA", dia)
+
+                    startActivity(intent)
+
+                    overridePendingTransition(
+                        android.R.anim.fade_in,
+                        android.R.anim.fade_out
+                    )
+                }
+        }
+
+        layoutVet.animate()
+            .alpha(1f)
+            .setDuration(500)
+
+        layoutVet.setOnTouchListener { v, event ->
+
+            when (event.action) {
+
+                android.view.MotionEvent.ACTION_DOWN -> {
+                    v.animate()
+                        .alpha(0.85f)
+                        .setDuration(80)
+                        .start()
+                }
+
+                android.view.MotionEvent.ACTION_UP,
+                android.view.MotionEvent.ACTION_CANCEL -> {
+                    v.animate()
+                        .alpha(1f)
+                        .setDuration(80)
+                        .start()
+                }
+            }
+
+            false
         }
 
         layoutVet.setOnClickListener {
 
-            val intent = Intent(this, activity_visitaVeterinario::class.java)
+            it.animate()
+                .scaleX(0.92f)
+                .scaleY(0.92f)
+                .setDuration(80)
+                .withEndAction {
 
-            intent.putExtra("DIA", dia)
+                    it.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .duration = 80
 
-            startActivity(intent)
+                    val intent = Intent(this, activity_visitaVeterinario::class.java)
+
+                    intent.putExtra("DIA", dia)
+
+                    startActivity(intent)
+
+                    overridePendingTransition(
+                        android.R.anim.fade_in,
+                        android.R.anim.fade_out
+                    )
+                }
 
         }
 
@@ -96,12 +223,43 @@ class EventoDiaActivity : AppCompatActivity() {
                 .apply()
 
             if (texto.isNotEmpty()) {
-                tvNotasGuardadas.text = texto
+                tvNotasGuardadas.animate()
+                    .alpha(0f)
+                    .setDuration(120)
+                    .withEndAction {
+
+                        tvNotasGuardadas.text = texto
+
+                        tvNotasGuardadas.animate()
+                            .alpha(1f)
+                            .setDuration(120)
+                            .start()
+                    }
+                    .start()
             } else {
                 tvNotasGuardadas.text = "No hay nada aún"
             }
 
             Toast.makeText(this, "Evento guardado 😺", Toast.LENGTH_SHORT).show()
+
+            btnSave.animate()
+                .rotation(4f)
+                .setDuration(50)
+                .withEndAction {
+
+                    btnSave.animate()
+                        .rotation(-4f)
+                        .setDuration(50)
+                        .withEndAction {
+
+                            btnSave.animate()
+                                .rotation(0f)
+                                .setDuration(50)
+                                .start()
+                        }
+                        .start()
+                }
+                .start()
 
 
             finish()
@@ -109,7 +267,58 @@ class EventoDiaActivity : AppCompatActivity() {
 
         // CANCELAR
         btnCancel.setOnClickListener {
+
+            btnCancel.animate()
+                .alpha(0.6f)
+                .setDuration(120)
+                .withEndAction {
+                    finish()
+                }
+                .start()
+
             finish()
+        }
+
+        val animatedViews = listOf(
+            layoutVacuna,
+            layoutVet,
+            etNotas,
+            tvNotasGuardadas,
+            btnSave,
+            btnCancel
+        )
+
+        etNotas.setOnFocusChangeListener { v, hasFocus ->
+
+            if (hasFocus) {
+
+                v.animate()
+                    .scaleX(1.02f)
+                    .scaleY(1.02f)
+                    .setDuration(120)
+                    .start()
+
+            } else {
+
+                v.animate()
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .setDuration(120)
+                    .start()
+            }
+        }
+
+        animatedViews.forEachIndexed { index, view ->
+
+            view.alpha = 0f
+            view.translationY = 40f
+
+            view.animate()
+                .alpha(1f)
+                .translationY(0f)
+                .setStartDelay((index * 90).toLong())
+                .setDuration(350)
+                .start()
         }
     }
 }

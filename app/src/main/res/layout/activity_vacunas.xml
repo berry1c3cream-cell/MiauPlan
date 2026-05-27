@@ -24,6 +24,7 @@
 
         <!-- Triple Felina -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardTriple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -57,6 +58,7 @@
 
         <!-- Antirrábica -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardRabia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -90,6 +92,7 @@
 
         <!-- Leucemia Felina -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardLeucemia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -123,6 +126,7 @@
 
         <!-- Bordetella -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardBordetella"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
